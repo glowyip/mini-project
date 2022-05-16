@@ -124,7 +124,7 @@
                     <v-btn
                       text
                       color="#bd1569"
-                      @click="closeModal()"
+                      @click ="closeModal()"
                     >
                       Cancel
                     </v-btn>
@@ -144,7 +144,6 @@
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn
-          
             @click="closeDialog"
           >
             Close
@@ -163,7 +162,7 @@
             <v-card-title class="text-h5">Are you sure you want to delete this item?</v-card-title>
             <v-card-actions>
               <v-spacer></v-spacer>
-              <v-btn color="blue darken-1" text @click="close">Cancel</v-btn>
+              <v-btn color="blue darken-1" text @click="closeDelete">Cancel</v-btn>
               <v-btn color="blue darken-1" text @click="deleteFinance(item)">OK</v-btn>
               <v-spacer></v-spacer>
             </v-card-actions>
@@ -312,6 +311,15 @@ export default {
           this.edit=false
         }
       }
+    },
+    closeModal(){
+      this.modal = false
+    },
+    closeDelete(){
+      this.dialogDelete = false
+    },
+    closeDialog(){
+      this.dialog = false
     }
     }
 
